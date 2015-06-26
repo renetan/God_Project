@@ -12,14 +12,14 @@ private:
  string name;
 	
 public:
- Planet(string name);
- string getName()const { return this->name; }
- void setName(string name) { this->name=name; }
- int getPopulation()const { return population.size(); }
- void destroy();
- void add(Entity* e);
+ Planet(string name);    
+ string getName()const{ return this->name; }
+ void setName(string name) { this->name = name; }
+ int getPopulation()const{ return population.size(); }
+ void erasePopulation();
+ void addPopulation(Entity* e, int number);
  ~Planet();
-  
+
 };
 
 #endif
