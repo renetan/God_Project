@@ -12,7 +12,7 @@ Entity::Entity()
   this->power = 0;
   this->size = 0;
   this->weight = 0;
-  this->point = new Point2D();
+  point = new Point2D();
   this->state = State.Unknown;
 }
 
@@ -23,7 +23,7 @@ Entity::Entity(string name, double energy, double power, double size, double wei
   this->power = power;
   this->size = size;
   this->weight = weight;
-  this->point = new Point2D();
+  point = new Point2D();
   this->state = state.Unknown;               
 }                   
 
