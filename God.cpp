@@ -1,7 +1,7 @@
 #include "God.h"
 #include <iostream>
 
-God::Godstring name) : Human(name) {}
+God::God (string name) : Human(name) {}
 
 God::God() {}
 
@@ -18,8 +18,8 @@ void God::ErasePopulation(string planetName)
 
 void God::DestroyPlanet(string planetName)
 {
- sc->setPlanetName(planetName);
- sc->destroyPlanet();
+ scena->setPlanetName(planetName);
+ scena->destroyPlanet();
 }
 
 void God::AddEntity(string planetName, EntityType creature, int number)
