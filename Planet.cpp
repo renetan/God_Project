@@ -22,7 +22,7 @@ void Planet::addPopulation(EntityType* e, int number)
   {
    case entity:
    population.push_back(new Entity()); 
-   break;   //push_back adds element to the end of the vector
+   break;
    
    case animal:
    population.push_back(new Animal()); 
