@@ -11,8 +11,8 @@ Animal::Animal()
   this->power = 0;
   this->size = 0;
   this->weight = 0;
-  this->point = new Point2D();
   this->state = State.Unknown;
+  point = new Point2D();
 }
 
 Animal::Animal(string name, double energy, double power, double size, double weight, Point2D point, State state) : Entity(name, energy, power, size, weight, point, state)
@@ -21,21 +21,21 @@ Animal::Animal(string name, double energy, double power, double size, double wei
 
 void Animal::Eat()
 {
-     RandomG food;
-     this->weight += food.RandomNumber();
-     this->setState(Eating);
+  RandomG food;
+  this->weight += food.RandomNumber();
+  this->setState(Eating);
  }
  
 void Animal::Sleep()
 {
-     RandomG food;
-     this->energy += food.RandomNumber();
-     this->setState(Sleeping);     
- } 
+   RandomG food;
+   this->energy += food.RandomNumber();
+   this->setState(Sleeping);     
+} 
 
 void Animal::SearchingForFood()
 {
-     RandomG food;
-     this->power -= food.RandomNumber();
-     this->setState(SearchingForFood);
- }
+   RandomG food;
+   this->power -= food.RandomNumber();
+   this->setState(SearchingForFood);
+}
