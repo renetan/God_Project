@@ -16,7 +16,7 @@ Entity::Entity()
   this->state = State.Unknown;
 }
 
-Entity::Entity(string name, double energy, double power, double size, double weight, Point2D point, State state) 
+Entity::Entity(string name, double energy, double power, double size, double weight, Point2D* point, State state) 
 { 
   this->name = name;
   this->energy = energy;
@@ -47,16 +47,18 @@ void Entity::Move()
 void Entity::DoAction(State action)
 {
   switch (action)
-	{
-	  case Moving:
-		  Move();
-		  setState(Moving); 
-		  break;
-  	case Attacking:
-	  	setState(Attacking); 
-	  	break;
-	  case Unknown:
-	  	setState(Unknown); 
-	  	break;
-	}
+  {
+   case Moving:
+   Move();
+   setState(Moving); 
+   break;
+   
+   case Attacking:
+   setState(Attacking); 
+   break;
+
+   case Unknown:
+   setState(Unknown); 
+   break;
+ }
 }
