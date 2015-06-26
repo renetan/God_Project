@@ -1,55 +1,66 @@
 #include "Scene.h"
 #include "Planet.h"
-#icnlude<iostream>
+
+#include <iostream>
 
 using namespace std;
 
-Scene::Scene(){}
-Scene::Scene(Planet* p) 
+Scene::Scene() {}
+
+void Scene::createPlanets()
 {
- planets.push_back(p); //vkarva planetata v masiva
+	planet.push_back(new Planet(name));
+}
+
+void Scene::erasePopulation()
+{
+ for (int i = 0; i < planet.size(); i++)
+	{
+		if (planet[i]->getName() == planetName.data())
+		{
+			planet[i]->erasePopulation();  //vzima go ot planet.cpp
+			cout << "Iztri naselenieto na planetata \n";
+			cout << "\n";
+		}
+		else
+			cout << "Nqma takava planeta\n";
+	}
+}
+
+void Scene::destroyPlanet()
+{
+	check();
+	for (int i = 0; i < planet.size(); i++)
+	{
+		if (planet[i]->getName() == planetName.data())
+		{
+			planet.erase(planet.cbegin() + i);
+			cout << "Iztri planeta\n";
+			cout << "\n";
+		}
+		else
+		{
+		 cout << "Nqma takava planeta\n";
+		}
+	}
+}
+
+void Scene::addEntity()
+{
+	for (int i = 0; i < planet.size(); i++)
+	{
+		if (planet[i]->getName() == planetName)
+		{
+			planet[i]->addPopulation(e, number);
+		}
+	}
 }
 
 Scene::~Scene()
 {
- while (!planets.empty())
- {
-  delete planets.back();
-  planets.pop_back();
- }
-}
-
-void Scene::CreateEntity(creature, p)
-{ 
- switch(creature)
- {
-  case animal:
-  Animal m = new Animal("name");
-  p.Add(m);
-  break;
-
-  case entity:
-  Entity q = new Entity(" ");
-  p.Add(q);
-  break;
-
-  case god:
-  God n = new God(" ");
-  p.Add(n);
-  break;
-
-  case human:
-  Human r = new Human(" ");
-  p.Add(r);
-  break;
-
-  case unknown:
-  Entity s = new Entity(" ");
-  p.Add(s);
-  break;
-  
-  default:
-  cout<<"There is no that kind of creature"<<endl;
-  break;
- }
+	while (!planet.empty())
+	{
+		delete planet.back();
+		planet.pop_back();
+	}
 }
