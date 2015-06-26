@@ -1,12 +1,13 @@
 #ifndef ENTITYTYPE_H
 #define	ENTITYTYPE_H
 
-enum EntityType {
-    entity,
-    animal,
-    human,
-    god,
-    unknown
+enum EntityType
+{
+ entity,
+ animal,
+ human,
+ god,
+ unknown
 };
 
 #endif
