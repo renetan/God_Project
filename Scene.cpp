@@ -29,7 +29,6 @@ void Scene::erasePopulation()
 
 void Scene::destroyPlanet()
 {
-	check();
 	for (int i = 0; i < planet.size(); i++)
 	{
 		if (planet[i]->getName() == planetName.data())
