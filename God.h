@@ -11,7 +11,6 @@ private:
 public:
  God();
  God(string name);
- God& operator=(God& s);
  void CreatePlanets();
  void ErasePopulation(string planetName);
  void DestroyPlanet(string planetName);
